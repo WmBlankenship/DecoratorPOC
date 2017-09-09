@@ -7,9 +7,9 @@ namespace DecoratorPOC.Core.Models
 {
     public abstract class BasePizzaDecorator : IPizza
     {
-        private readonly BasePizza _basePizza;
+        private readonly IPizza _basePizza;
 
-        public BasePizzaDecorator(BasePizza basePizza)
+        public BasePizzaDecorator(IPizza basePizza)
         {
             _basePizza = basePizza;
         }

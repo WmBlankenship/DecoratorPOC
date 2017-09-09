@@ -5,9 +5,9 @@ using System.Text;
 
 namespace DecoratorPOC.Core.Models
 {
-    public class PepperoniPizzaDecorator : BasePizzaDecorator
+    public class SausagePizzaDecorator : BasePizzaDecorator
     {
-        public PepperoniPizzaDecorator(IPizza basePizza)
+        public SausagePizzaDecorator(IPizza basePizza)
             : base(basePizza)
         {
 
@@ -15,12 +15,12 @@ namespace DecoratorPOC.Core.Models
 
         public override decimal GetCost()
         {
-            return base.GetCost() + .50m;
+            return base.GetCost() + 1m;
         }
 
         public override string GetDescription()
         {
-            return $"{base.GetDescription()}, pepperoni";
+            return $"{base.GetDescription()}, sausage";
         }
     }
 }
