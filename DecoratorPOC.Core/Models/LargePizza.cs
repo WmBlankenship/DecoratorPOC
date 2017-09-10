@@ -2,14 +2,14 @@
 
 namespace DecoratorPOC.Core.Models
 {
-    public class LargePizza : BasePizza, IPizza
+    public class LargePizza : IPizza
     {
-        public override decimal GetCost()
+        public decimal GetCost()
         {
             return 6.00m;
         }
 
-        public override string GetDescription()
+        public string GetDescription()
         {
             return "Large pizza";
         }
