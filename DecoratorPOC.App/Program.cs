@@ -1,4 +1,5 @@
 ﻿using DecoratorPOC.Core.Models;
+using DecoratorPOC.Core.Models.Decorators;
 using System;
 
 namespace DecoratorPOC.App

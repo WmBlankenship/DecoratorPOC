@@ -1,11 +1,8 @@
 ﻿using DecoratorPOC.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DecoratorPOC.Core.Models
-{
-    public class PepperoniPizzaDecorator : BasePizzaDecorator
+namespace DecoratorPOC.Core.Models.Decorators
+{ 
+    public class PepperoniPizzaDecorator : BasePizzaDecorator, IPizza
     {
         public PepperoniPizzaDecorator(IPizza basePizza)
             : base(basePizza)
