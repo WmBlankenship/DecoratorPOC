@@ -8,28 +8,28 @@ namespace DecoratorPOC.App
     {
         static void Main(string[] args)
         {
-            var smallPizza = new Smallizza();
-            var largePizza = new LargePizza();
+            var smallComponent = new SmallComponent();
+            var largeComponent = new LargeComponent();
 
-            var pepperoniPizza = new PepperoniPizzaDecorator(largePizza);
-            var sausageAndPepperoniPizza = new SausagePizzaDecorator(pepperoniPizza);
+            var largeAlphaComponent = new AlphaDecorator(largeComponent);
+            var largeAlphaBetaComponent = new BetaDecorator(largeAlphaComponent);
 
-            var sausagePizza = new SausagePizzaDecorator(largePizza);
-            var dblSausagePizza = new SausagePizzaDecorator(sausagePizza);
+            var largeBetaComponent = new BetaDecorator(largeComponent);
+            var largeBetaBetaComponent = new BetaDecorator(largeBetaComponent);
 
-            var smallPepperoniPizza = new PepperoniPizzaDecorator(smallPizza);
-            var smallDblPepperoniPizza = new PepperoniPizzaDecorator(smallPepperoniPizza);
+            var smallAlphaComponent = new AlphaDecorator(smallComponent);
+            var smallAlphaAlphaComponent = new AlphaDecorator(smallAlphaComponent);
 
-            Console.WriteLine($"Description: {largePizza.GetDescription()}, Cost: {largePizza.GetCost()}");
+            Console.WriteLine($"Description(L): {largeComponent.GetDescription()}, Cost: {largeComponent.GetCost()}");
 
-            Console.WriteLine($"Description w/Pep: {pepperoniPizza.GetDescription()}, Cost: {pepperoniPizza.GetCost()}");
-            Console.WriteLine($"Description w/Pep & Sau: {sausageAndPepperoniPizza.GetDescription()}, Cost: {sausageAndPepperoniPizza.GetCost()}");
+            Console.WriteLine($"Description(L/A): {largeAlphaComponent.GetDescription()}, Cost: {largeAlphaComponent.GetCost()}");
+            Console.WriteLine($"Description(L/A/B): {largeAlphaBetaComponent.GetDescription()}, Cost: {largeAlphaBetaComponent.GetCost()}");
 
-            Console.WriteLine($"Description w/Sau: {sausagePizza.GetDescription()}, Cost: {sausagePizza.GetCost()}");
-            Console.WriteLine($"Description w/Dbl Sau: {dblSausagePizza.GetDescription()}, Cost: {dblSausagePizza.GetCost()}");
+            Console.WriteLine($"Description(L/B): {largeBetaComponent.GetDescription()}, Cost: {largeBetaComponent.GetCost()}");
+            Console.WriteLine($"Description(L/B/B): {largeBetaBetaComponent.GetDescription()}, Cost: {largeBetaBetaComponent.GetCost()}");
 
-            Console.WriteLine($"Description sm w/Pep: {smallPepperoniPizza.GetDescription()}, Cost: {smallPepperoniPizza.GetCost()}");
-            Console.WriteLine($"Description sm w/Dbl Pep: {smallDblPepperoniPizza.GetDescription()}, Cost: {smallDblPepperoniPizza.GetCost()}");
+            Console.WriteLine($"Description(S/A): {smallAlphaComponent.GetDescription()}, Cost: {smallAlphaComponent.GetCost()}");
+            Console.WriteLine($"Description(S/A/A): {smallAlphaAlphaComponent.GetDescription()}, Cost: {smallAlphaAlphaComponent.GetCost()}");
 
             Console.Read();
         }

@@ -1,6 +1,6 @@
 ﻿namespace DecoratorPOC.Core.Interfaces
 {
-    public interface IPizza
+    public interface IComponent
     {
         string GetDescription();
         decimal GetCost();
